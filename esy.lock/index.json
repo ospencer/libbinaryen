@@ -1,5 +1,5 @@
 {
-  "checksum": "cdaa3870475bb45a169ba8a35962ac50",
+  "checksum": "3c8829f3cffe3230f4ea8e892170ee73",
   "root": "@grain/libbinaryen@link-dev:./package.json",
   "node": {
     "ocaml@4.14.1000@d41d8cd9": {
@@ -1348,21 +1348,22 @@
         "ocaml@4.14.1000@d41d8cd9", "@opam/dune@opam:3.16.1@0e7c9090"
       ]
     },
-    "@opam/conf-ninja@opam:1@86fa238b": {
-      "id": "@opam/conf-ninja@opam:1@86fa238b",
+    "@opam/conf-ninja@github:grain-lang/ninja:esy.json#bf0e0263fddfd7c820903d849b67b90dc7a3c65e@d41d8cd9": {
+      "id":
+        "@opam/conf-ninja@github:grain-lang/ninja:esy.json#bf0e0263fddfd7c820903d849b67b90dc7a3c65e@d41d8cd9",
       "name": "@opam/conf-ninja",
-      "version": "opam:1",
+      "version":
+        "github:grain-lang/ninja:esy.json#bf0e0263fddfd7c820903d849b67b90dc7a3c65e",
       "source": {
         "type": "install",
-        "source": [ "no-source:" ],
-        "opam": {
-          "name": "conf-ninja",
-          "version": "1",
-          "path": "esy.lock/opam/conf-ninja.1"
-        }
+        "source": [
+          "github:grain-lang/ninja:esy.json#bf0e0263fddfd7c820903d849b67b90dc7a3c65e"
+        ]
       },
       "overrides": [],
-      "dependencies": [ "@esy-ocaml/substs@0.0.1@d41d8cd9" ],
+      "dependencies": [
+        "@opam/conf-cmake@github:grain-lang/cmake:esy.json#91a2c3677bef84a6eb20318284dff9f3bf32719d@d41d8cd9"
+      ],
       "devDependencies": []
     },
     "@opam/conf-cmake@github:grain-lang/cmake:esy.json#91a2c3677bef84a6eb20318284dff9f3bf32719d@d41d8cd9": {
@@ -1611,7 +1612,7 @@
         "ocaml@4.14.1000@d41d8cd9",
         "@opam/dune-configurator@opam:3.17.2@6a903a8c",
         "@opam/dune@opam:3.16.1@0e7c9090",
-        "@opam/conf-ninja@opam:1@86fa238b",
+        "@opam/conf-ninja@github:grain-lang/ninja:esy.json#bf0e0263fddfd7c820903d849b67b90dc7a3c65e@d41d8cd9",
         "@opam/conf-cmake@github:grain-lang/cmake:esy.json#91a2c3677bef84a6eb20318284dff9f3bf32719d@d41d8cd9"
       ],
       "devDependencies": [
