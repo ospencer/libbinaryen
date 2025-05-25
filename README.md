@@ -1,6 +1,7 @@
 # libbinaryen
 
 Test
+Another test
 
 Libbinaryen packaged for OCaml.
 
