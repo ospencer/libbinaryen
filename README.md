@@ -2,6 +2,7 @@
 
 Test
 Another test
+Yet another test
 
 Libbinaryen packaged for OCaml.
 
