@@ -1,7 +1,7 @@
 {
   "packages": {
     ".": {
-      "pull-request-title-pattern": "chore${scope}: Release${component} libbinaryen ${version}",
+      "pull-request-title-pattern": "chore${scope}: Release${component} libbinaryen test ${version}",
       "package-name": "libbinaryen",
       "component": "libbinaryen"
     }
