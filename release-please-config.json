@@ -1,8 +1,8 @@
 {
+  "group-pull-request-title-pattern": "chore${scope}: Release${component} libbinaryen test ${version}",
   "bootstrap-sha": "48a9e5f72230d4829bc335d5682d1cf28732b147",
   "packages": {
     ".": {
-      "pull-request-title-pattern": "chore${scope}: Release${component} libbinaryen test ${version}",
       "package-name": "libbinaryen",
       "component": "libbinaryen"
     }
