@@ -1,5 +1,73 @@
 # Changelog
 
+## [107.0.0](https://github.com/ospencer/libbinaryen/compare/v106.0.0...v107.0.0) (2025-06-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Require node `>= 22` for jsoo `6` ([#114](https://github.com/ospencer/libbinaryen/issues/114))
+* Drop support for OCaml 4.12
+* Upgrade to Binaryen v121 ([#101](https://github.com/ospencer/libbinaryen/issues/101))
+* Upgrade to Binaryen v120 ([#100](https://github.com/ospencer/libbinaryen/issues/100))
+* Upgrade to Binaryen v119 ([#95](https://github.com/ospencer/libbinaryen/issues/95))
+* Upgrade to Binaryen v118
+* Upgrade to Binaryen v117 ([#93](https://github.com/ospencer/libbinaryen/issues/93))
+* Upgrade to Binaryen v116 ([#92](https://github.com/ospencer/libbinaryen/issues/92))
+* Update to libbinaryen v115 ([#90](https://github.com/ospencer/libbinaryen/issues/90))
+* Upgrade to libbinaryen v114 ([#87](https://github.com/ospencer/libbinaryen/issues/87))
+* Upgrade to libbinaryen v113 ([#83](https://github.com/ospencer/libbinaryen/issues/83))
+* Upgrade to libbinaryen v112 ([#81](https://github.com/ospencer/libbinaryen/issues/81))
+* Upgrade to libbinaryen v111 ([#75](https://github.com/ospencer/libbinaryen/issues/75))
+* Update binaryen to version_110 ([#72](https://github.com/ospencer/libbinaryen/issues/72))
+* Require dune 3.0 to better support js_of_ocaml
+* Require js_of_ocaml 4.1 to ensure optimization fix
+* Update binaryen to version_109 ([#65](https://github.com/ospencer/libbinaryen/issues/65))
+* Update binaryen to version_108 ([#62](https://github.com/ospencer/libbinaryen/issues/62))
+* Change js_of_ocaml binding to Binaryen
+* Avoid building tools
+* Update binaryen to version_107 ([#57](https://github.com/ospencer/libbinaryen/issues/57))
+
+### Features
+
+* a test ([1d6d77f](https://github.com/ospencer/libbinaryen/commit/1d6d77f061f6908e19c924f0953f30cddd1d7326))
+* add a feature ([dcc37ac](https://github.com/ospencer/libbinaryen/commit/dcc37ac3a7d65cd83a2d57a1d841a6644865ef64))
+* add a feature ([0f1553b](https://github.com/ospencer/libbinaryen/commit/0f1553bc52941bfec63cfb0a0999ccf519f57bea))
+* another test ([9e965a9](https://github.com/ospencer/libbinaryen/commit/9e965a9b673ac3363552a21ecc0d7e5d10514f38))
+* Relax the js_of_ocaml version range ([#78](https://github.com/ospencer/libbinaryen/issues/78)) ([5863fe7](https://github.com/ospencer/libbinaryen/commit/5863fe790b831c6e3888ce353598911ff17777c2))
+* Require node `>= 22` for jsoo `6` ([#114](https://github.com/ospencer/libbinaryen/issues/114)) ([01d2926](https://github.com/ospencer/libbinaryen/commit/01d29269fe8bbefa85a87d16204f49ea0cadd15d))
+* Support OCaml 5 ([bad98c6](https://github.com/ospencer/libbinaryen/commit/bad98c67e44b0edbf177055ccb5d9bca562be6ec))
+* Update binaryen to version_107 ([#57](https://github.com/ospencer/libbinaryen/issues/57)) ([48090d5](https://github.com/ospencer/libbinaryen/commit/48090d541df71df4a13766543beca7a5b559c10f))
+* Update binaryen to version_108 ([#62](https://github.com/ospencer/libbinaryen/issues/62)) ([1e69a07](https://github.com/ospencer/libbinaryen/commit/1e69a071c6cb905dd8d8e1b86957222f29243ed0))
+* Update binaryen to version_109 ([#65](https://github.com/ospencer/libbinaryen/issues/65)) ([f79c848](https://github.com/ospencer/libbinaryen/commit/f79c84871122d40c4dacbb2f9db8c40657b85677))
+* Update binaryen to version_110 ([#72](https://github.com/ospencer/libbinaryen/issues/72)) ([008d8ff](https://github.com/ospencer/libbinaryen/commit/008d8ffa7431a0190b05db9b33a15c52044435c2))
+* Update to libbinaryen v115 ([#90](https://github.com/ospencer/libbinaryen/issues/90)) ([4f4a03c](https://github.com/ospencer/libbinaryen/commit/4f4a03c8227ded32ab719daa6121a80bfbe2e640))
+* Upgrade to Binaryen v116 ([#92](https://github.com/ospencer/libbinaryen/issues/92)) ([7f9308d](https://github.com/ospencer/libbinaryen/commit/7f9308d15601ad989a89f619e5818056d0d872a0))
+* Upgrade to Binaryen v117 ([#93](https://github.com/ospencer/libbinaryen/issues/93)) ([ea58318](https://github.com/ospencer/libbinaryen/commit/ea58318ef23a7d59b61d149f387286fcedd92d86))
+* Upgrade to Binaryen v118 ([bf51e2c](https://github.com/ospencer/libbinaryen/commit/bf51e2ca7e117822db160878fc73d238beb9adb9))
+* Upgrade to Binaryen v119 ([#95](https://github.com/ospencer/libbinaryen/issues/95)) ([5cd6dc5](https://github.com/ospencer/libbinaryen/commit/5cd6dc54817122ded9f22209c81294611544628d))
+* Upgrade to Binaryen v120 ([#100](https://github.com/ospencer/libbinaryen/issues/100)) ([93c0281](https://github.com/ospencer/libbinaryen/commit/93c0281a38b196b14a3e2a6148b0ae335388c077))
+* Upgrade to Binaryen v121 ([#101](https://github.com/ospencer/libbinaryen/issues/101)) ([cc960c8](https://github.com/ospencer/libbinaryen/commit/cc960c86c559ab6c86a5d9c529a0416c029d480e))
+* Upgrade to libbinaryen v111 ([#75](https://github.com/ospencer/libbinaryen/issues/75)) ([e43a7ff](https://github.com/ospencer/libbinaryen/commit/e43a7ffeb865034a3fbf6584b434eae890f980e5))
+* Upgrade to libbinaryen v112 ([#81](https://github.com/ospencer/libbinaryen/issues/81)) ([541f674](https://github.com/ospencer/libbinaryen/commit/541f674f6047ada25a88d666714d3266d5a38bd0))
+* Upgrade to libbinaryen v113 ([#83](https://github.com/ospencer/libbinaryen/issues/83)) ([f19e9a9](https://github.com/ospencer/libbinaryen/commit/f19e9a95c7c4300e99ba72b3b1658e28f8379e13))
+* Upgrade to libbinaryen v114 ([#87](https://github.com/ospencer/libbinaryen/issues/87)) ([cb7574b](https://github.com/ospencer/libbinaryen/commit/cb7574b2442aea58e8150200018b105ed67ee783))
+
+
+### Bug Fixes
+
+* Disable the maybe-uninitialized error in newer gcc ([#69](https://github.com/ospencer/libbinaryen/issues/69)) ([2b6834a](https://github.com/ospencer/libbinaryen/commit/2b6834ad6d5fb19618b4a234ae133ddd6918e275))
+* Remove upper bounds on dependencies ([#60](https://github.com/ospencer/libbinaryen/issues/60)) ([3a75c23](https://github.com/ospencer/libbinaryen/commit/3a75c23941e1387d07a686dfa06266f517100c8f))
+* Use known tags ([825c8a0](https://github.com/ospencer/libbinaryen/commit/825c8a0a405a052c2d64a3fe1ad05581b4e1218b))
+
+
+### Miscellaneous Chores
+
+* Avoid building tools ([1e69a07](https://github.com/ospencer/libbinaryen/commit/1e69a071c6cb905dd8d8e1b86957222f29243ed0))
+* Change js_of_ocaml binding to Binaryen ([1e69a07](https://github.com/ospencer/libbinaryen/commit/1e69a071c6cb905dd8d8e1b86957222f29243ed0))
+* Drop support for OCaml 4.12 ([bad98c6](https://github.com/ospencer/libbinaryen/commit/bad98c67e44b0edbf177055ccb5d9bca562be6ec))
+* Require dune 3.0 to better support js_of_ocaml ([008d8ff](https://github.com/ospencer/libbinaryen/commit/008d8ffa7431a0190b05db9b33a15c52044435c2))
+* Require js_of_ocaml 4.1 to ensure optimization fix ([008d8ff](https://github.com/ospencer/libbinaryen/commit/008d8ffa7431a0190b05db9b33a15c52044435c2))
+
 ## [106.0.0](https://github.com/ospencer/libbinaryen/compare/v105.0.0...v106.0.0) (2025-06-14)
 
 
