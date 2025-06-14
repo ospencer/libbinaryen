@@ -1,6 +1,6 @@
 # libbinaryen
 
-Test
+Test!
 Another test
 Yet another test
 
