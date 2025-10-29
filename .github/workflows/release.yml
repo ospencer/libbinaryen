@@ -78,7 +78,7 @@ jobs:
         env:
           OPAM_PUBLISH_GH_TOKEN: ${{ secrets.OPAM_RELEASE }}
         run: |
-          opam publish --repo=ospencer/opam-repository --no-confirmation --no-browser --msg-file=CHANGES.md libbinaryen.tar.gz
+          opam publish --repo=ospencer/opam-repository --no-confirmation --no-browser --msg-file=CHANGES.md .
 
   # npm-release:
   #   needs: [add-archive]
