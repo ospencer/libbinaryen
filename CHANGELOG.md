@@ -1,5 +1,24 @@
 # Changelog
 
+## [122.0.0](https://github.com/ospencer/libbinaryen/compare/v121.0.0...v122.0.0) (2025-10-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* Require node `>= 22` for jsoo `6` ([#114](https://github.com/ospencer/libbinaryen/issues/114))
+* Drop support for OCaml 4.12
+
+### Features
+
+* Bump `conf-cmake` ([#117](https://github.com/ospencer/libbinaryen/issues/117)) ([938f5f0](https://github.com/ospencer/libbinaryen/commit/938f5f0c9e862ede17229fa812747d0021ffe9ab))
+* Require node `&gt;= 22` for jsoo `6` ([#114](https://github.com/ospencer/libbinaryen/issues/114)) ([01d2926](https://github.com/ospencer/libbinaryen/commit/01d29269fe8bbefa85a87d16204f49ea0cadd15d))
+* Support OCaml 5 ([bad98c6](https://github.com/ospencer/libbinaryen/commit/bad98c67e44b0edbf177055ccb5d9bca562be6ec))
+
+
+### Miscellaneous Chores
+
+* Drop support for OCaml 4.12 ([bad98c6](https://github.com/ospencer/libbinaryen/commit/bad98c67e44b0edbf177055ccb5d9bca562be6ec))
+
 ## [121.0.0](https://github.com/grain-lang/libbinaryen/compare/v120.0.0...v121.0.0) (2025-03-04)
 
 
