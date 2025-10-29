@@ -2,57 +2,56 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - oscar/test-opam-publish
 
 jobs:
-  release-please:
-    name: Create Release
-    runs-on: ubuntu-22.04
-    outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
-      tag_name: ${{ steps.release.outputs.tag_name }}
-    steps:
-      - uses: google-github-actions/release-please-action@v3.7.10
-        id: release
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: ocaml
-          package-name: libbinaryen
-          pull-request-title-pattern: "chore${scope}: Release${component} ${version}"
+  # release-please:
+  #   name: Create Release
+  #   runs-on: ubuntu-22.04
+  #   outputs:
+  #     release_created: ${{ steps.release.outputs.release_created }}
+  #     tag_name: ${{ steps.release.outputs.tag_name }}
+  #   steps:
+  #     - uses: google-github-actions/release-please-action@v3.7.10
+  #       id: release
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
+  #         release-type: ocaml
+  #         package-name: libbinaryen
+  #         pull-request-title-pattern: "chore${scope}: Release${component} ${version}"
 
-  add-archive:
-    needs: [release-please]
-    if: ${{ needs.release-please.outputs.release_created }}
-    name: Add archive to release
-    runs-on: macos-latest
-    outputs:
-      browser_download_url: ${{ steps.upload.outputs.browser_download_url }}
-      notes: ${{ steps.upload.outputs.notes }}
-    steps:
-      - name: Install git-archive-all
-        run: |
-          brew install git-archive-all
+  # add-archive:
+  #   needs: [release-please]
+  #   if: ${{ needs.release-please.outputs.release_created }}
+  #   name: Add archive to release
+  #   runs-on: macos-latest
+  #   outputs:
+  #     browser_download_url: ${{ steps.upload.outputs.browser_download_url }}
+  #     notes: ${{ steps.upload.outputs.notes }}
+  #   steps:
+  #     - name: Install git-archive-all
+  #       run: |
+  #         brew install git-archive-all
 
-      - name: Checkout code
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          submodules: "recursive"
+  #     - name: Checkout code
+  #       uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+  #       with:
+  #         submodules: "recursive"
 
-      - name: Build archive
-        run: |
-          git-archive-all --force-submodules libbinaryen.tar.gz
+  #     - name: Build archive
+  #       run: |
+  #         git-archive-all --force-submodules libbinaryen.tar.gz
 
-      - name: Upload Release Asset
-        id: upload
-        uses: grain-lang/upload-release-action@v3.0.2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./libbinaryen.tar.gz
-          asset_name: libbinaryen-${{ needs.release-please.outputs.tag_name }}.tar.gz
-          tag: ${{ needs.release-please.outputs.tag_name }}
+  #     - name: Upload Release Asset
+  #       id: upload
+  #       uses: grain-lang/upload-release-action@v3.0.2
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
+  #         file: ./libbinaryen.tar.gz
+  #         asset_name: libbinaryen-${{ needs.release-please.outputs.tag_name }}.tar.gz
+  #         tag: ${{ needs.release-please.outputs.tag_name }}
 
   opam-release:
-    needs: [release-please, add-archive]
     name: Publish to opam registry
     runs-on: ubuntu-22.04
     steps:
@@ -80,20 +79,20 @@ jobs:
         env:
           OPAM_PUBLISH_GH_TOKEN: ${{ secrets.OPAM_RELEASE }}
         run: |
-          opam publish --no-confirmation --no-browser --msg-file=CHANGES.md ${{ needs.add-archive.outputs.browser_download_url }}
+          opam publish --repo=ospencer/opam-repository --no-confirmation --no-browser --msg-file=CHANGES.md .
 
-  npm-release:
-    needs: [add-archive]
-    name: Publish to npm registry
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Setup NodeJS
-        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
-        with:
-          node-version: "22"
-          registry-url: "https://registry.npmjs.org"
+  # npm-release:
+  #   needs: [add-archive]
+  #   name: Publish to npm registry
+  #   runs-on: ubuntu-22.04
+  #   steps:
+  #     - name: Setup NodeJS
+  #       uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
+  #       with:
+  #         node-version: "22"
+  #         registry-url: "https://registry.npmjs.org"
 
-      - name: Publish to npm
-        run: npm publish ${{ needs.add-archive.outputs.browser_download_url }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_RELEASE }}
+  #     - name: Publish to npm
+  #       run: npm publish ${{ needs.add-archive.outputs.browser_download_url }}
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_RELEASE }}
